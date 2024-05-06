@@ -1,0 +1,84 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/jsonrpc": {
+            "get": {
+                "description": "do ping",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "example"
+                ],
+                "summary": "JSONRPC over HTTP",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Target url of jsonrpc server",
+                        "name": "target",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "enum": [
+                            "eth_blockNumber",
+                            "eth_web3_clientversion",
+                            "optimism_rollupConfig",
+                            "optimism_syncStatus",
+                            "admin_nodeInfo",
+                            "admin_peers"
+                        ],
+                        "type": "string",
+                        "description": "JSONRPC methods",
+                        "name": "method",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Request ID",
+                        "name": "id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/ping": {
+            "get": {
+                "description": "do ping",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "example"
+                ],
+                "summary": "ping example",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

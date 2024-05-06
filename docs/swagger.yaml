@@ -1,0 +1,56 @@
+info:
+  contact: {}
+paths:
+  /jsonrpc:
+    get:
+      consumes:
+      - application/json
+      description: do ping
+      parameters:
+      - description: Target url of jsonrpc server
+        in: query
+        name: target
+        required: true
+        type: string
+      - description: JSONRPC methods
+        enum:
+        - eth_blockNumber
+        - eth_web3_clientversion
+        - optimism_rollupConfig
+        - optimism_syncStatus
+        - admin_nodeInfo
+        - admin_peers
+        in: query
+        name: method
+        required: true
+        type: string
+      - description: Request ID
+        in: query
+        name: id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: JSONRPC over HTTP
+      tags:
+      - example
+  /ping:
+    get:
+      consumes:
+      - application/json
+      description: do ping
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: ping example
+      tags:
+      - example
+swagger: "2.0"
