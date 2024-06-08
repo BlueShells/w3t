@@ -15,25 +15,23 @@ RUN go mod download
 
 COPY . .
 
-RUN --mount=type=cache,target=/root/.cache/go-build go install -v ./...
-
-RUN make build
+RUN --mount=type=cache,target=/root/.cache/go-build make build
 
 FROM debian:bullseye
 
-RUN useradd -m w3t && \
+RUN useradd -m app && \
     apt update && \
     apt install -y \
         ca-certificates \
         curl
 
-USER w3t
+USER app
 
-COPY --from=builder /go/bin/w3t /bin
+COPY --from=builder /build/out/bin/w3t /bin
 
 WORKDIR /apps
 
-ADD config.yaml /etc/w3t_exporter/config.yaml
+ADD config.yaml .
 
 EXPOSE 9115
 ENTRYPOINT  [ "/bin/w3t" ]
