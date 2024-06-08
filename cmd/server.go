@@ -8,8 +8,8 @@ import (
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"io"
-	"mos/docs"
 	"net/http"
+	"w3t/docs"
 )
 
 // serverCmd represents the server command

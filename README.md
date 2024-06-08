@@ -4,12 +4,12 @@
 go mod download
 ```
 
-## mos server
+## w3t server
 ```shell
 go run main.go server
 ```
 
-## mos cli
+## w3t cli
 
 ### btc utils
 ```shell

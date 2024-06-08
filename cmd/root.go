@@ -4,17 +4,17 @@ Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
-	"mos/cmd/btc"
-	"mos/cmd/eth"
-	"mos/cmd/p2p"
 	"os"
+	"w3t/cmd/btc"
+	"w3t/cmd/eth"
+	"w3t/cmd/p2p"
 
 	"github.com/spf13/cobra"
 )
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "mos",
+	Use:   "w3t",
 	Short: "A brief description of your application",
 	// Uncomment the following line if your bare application
 	// has an action associated with it:

@@ -10,7 +10,7 @@ import (
 	"strconv"
 
 	"github.com/spf13/cobra"
-	"mos/cmd/eth/hdwallet"
+	"w3t/cmd/eth/hdwallet"
 )
 
 // btcCmd represents the btc command
